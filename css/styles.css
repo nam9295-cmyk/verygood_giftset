@@ -1,0 +1,381 @@
+/* 전체 스타일 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Addington CF", sans-serif;
+  margin: 0;
+  color: #222;
+  background: #fff9f4;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* 레이아웃 유틸 */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+@media(min-width:768px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .flex-2 {
+    flex-wrap: nowrap;
+  }
+}
+
+/* 카드 */
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.07);
+}
+
+/* 상단 히어로 */
+.hero {
+  background: #fff;
+  padding: 40px 20px 32px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hero-box {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.hero-img {
+  width: 100vw;
+  /* 브라우저 가로 너비 전체 사용 */
+  max-width: 100vw;
+  height: auto;
+  display: block;
+
+  border-radius: 0;
+  /* 위에서 주던 둥근 모서리 제거 (원하면 다시 둥글게 가능) */
+  box-shadow: none;
+  /* 카드 느낌 그림자 제거 */
+  background: #ffffff;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: #ffffff;
+}
+
+/* ===== 스마트스토어 CTA 버튼 ===== */
+
+.cta-wrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-button {
+  display: inline-block;
+  background: #03C75A;
+  /* 버튼 배경: 다크 초콜릿 계열 */
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+  letter-spacing: -0.03em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all .15s ease;
+}
+
+.cta-button:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+}
+
+.brand-badge {
+  display: inline-flex;
+  /* 이미지 정렬 깔끔하게 */
+  align-items: center;
+  justify-content: center;
+
+
+  /* 텍스트 스타일은 사실 이제 필요없지만 남겨놔도 작동에는 문제 없음 */
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.02em;
+
+  /* 높이 고정 주면 더 버튼 느낌 나고 안정적 */
+  min-height: 28px;
+}
+
+.brand-logo {
+  display: block;
+  height: 60px;
+  /* 로고 높이 여기서 조절 */
+  width: auto;
+}
+
+.brand-wrap {
+  margin-top: 30px;
+}
+
+.set-overview-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.07);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.set-overview-img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+  background: #fff;
+  object-fit: cover;
+}
+
+.set-overview-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.set-overview-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+}
+
+.set-overview-note {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+/* ===== 구성품 리스트 (세로형 카드) ===== */
+
+/* 카드 전체 리스트 레이아웃 */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* 카드들 사이 간격 */
+}
+
+/* 각 카드 */
+.item-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* 기존 .card에서 이미
+     background, border-radius, box-shadow, padding 적용됨 */
+}
+
+/* 카드 상단 이미지 */
+.item-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.07);
+  background: #fff;
+}
+
+/* 안의 텍스트 라벨/타이틀/본문은 기존 클래스(.label, .item-title, .item-desc) 그대로 활용 */
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 20px 0 12px;
+  color: #111;
+  letter-spacing: -0.03em;
+  line-height: 1.4;
+}
+
+.sub {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 auto;
+  max-width: 360px;
+  line-height: 1.5;
+}
+
+/* 섹션 타이틀 */
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+
+.section-desc {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+
+/* 구성품 라벨 */
+.label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #a34700;
+  background: #fff1e6;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.item-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 8px;
+  letter-spacing: -0.03em;
+}
+
+.item-desc {
+  font-size: 0.9rem;
+  color: #444;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 납품 정보 박스 */
+.spec-row {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 12px;
+}
+
+.spec-label {
+  font-weight: 600;
+  color: #111;
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.8rem;
+  letter-spacing: -0.02em;
+}
+
+.spec-note {
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+}
+
+/* 두 칼럼 (스펙 영역) */
+.two-col {
+  display: grid;
+  gap: 24px;
+}
+
+@media(min-width:768px) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.spec-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.07);
+}
+
+.spec-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111;
+  margin: 0 0 12px;
+  letter-spacing: -0.03em;
+}
+
+/* 작은 디테일 */
+.badge-spec {
+  display: inline-block;
+  background: #fff9f4;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #555;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 4px 8px;
+  line-height: 1.2;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+/* 푸터 / 연락처 */
+footer {
+  background: #111;
+  color: #fff;
+  margin-top: 64px;
+  padding: 32px 20px 60px;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-head {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.contact-line {
+  line-height: 1.5;
+  color: #eee;
+  font-size: 0.9rem;
+  letter-spacing: -0.02em;
+}
+
+.legal {
+  font-size: 0.75rem;
+  color: #777;
+  margin-top: 20px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
